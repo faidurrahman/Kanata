@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, ArrowRight, MapPin, ShieldCheck, Zap, Users, Award, QrCode } from 'lucide-react';
+import { Star, ArrowRight, MapPin, ShieldCheck, Zap, Users, Award, QrCode, LayoutDashboard } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import SurveyPage from './SurveyPage';
 
@@ -37,7 +37,15 @@ export default function LandingPage() {
           </div>
         </div>
         <div className="flex gap-3">
-            <Button variant="ghost" onClick={() => navigate('/admin')} className="font-semibold">Admin</Button>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => navigate('/admin')} 
+              className="w-10 h-10 rounded-full text-slate-500 hover:text-[#0056b3] hover:bg-blue-50 transition-all"
+              title="Dashboard Admin"
+            >
+              <LayoutDashboard className="w-5 h-5" />
+            </Button>
         </div>
       </nav>
 
@@ -69,8 +77,8 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-slate-100">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-              <div className="flex items-center gap-2">
+          <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 text-center">
+              <div className="flex items-center justify-center gap-2">
                 <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo KANATA" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
                 <span className="font-bold">KANATA'</span>
               </div>
