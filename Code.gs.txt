@@ -1,0 +1,65 @@
+/**
+ * SCRIPT GOOGLE APPS SCRIPT (Code.gs)
+ * 
+ * Cara Penggunaan:
+ * 1. Buka Google Sheets baru.
+ * 2. Buat header di baris pertama: 
+ *    A1: Timestamp
+ *    B1: Service
+ *    C1: Rating
+ *    D1: Feedback
+ *    E1: Contact
+ * 3. Klik menu Ekstensi > Apps Script.
+ * 4. Hapus kode yang ada, lalu paste kode di bawah ini.
+ * 5. Klik Simpan (ikon disket).
+ * 6. Klik tombol "Terapkan" (Deploy) > "Deployment baru" (New deployment).
+ * 7. Pilih jenis: "Aplikasi Web" (Web app).
+ * 8. Deskripsi: (Bebas, misal: "Review Gate API").
+ * 9. Akses: Pilih "Siapa saja" (Anyone).
+ * 10. Klik "Terapkan" (Deploy).
+ * 11. Salin "URL Aplikasi Web" (Web app URL) yang dihasilkan.
+ * 12. Paste URL tersebut ke variabel `GOOGLE_SCRIPT_URL` di file React/Next.js Anda.
+ */
+
+const SPREADSHEET_ID = "1W8iA64VslblkNEyo44NWrYiK-vHnWRfJ7FPFFMO_6J4";
+const SHEET_NAME = "Sheet1"; // Sesuaikan dengan nama sheet Anda
+
+function doPost(e) {
+  try {
+    // Membuka spreadsheet berdasarkan ID
+    const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
+    
+    // Mengambil data JSON dari request body
+    const data = JSON.parse(e.postData.contents);
+    
+    // Menyiapkan data untuk dimasukkan ke baris baru
+    const rowData = [
+      data.timestamp || new Date().toISOString(),
+      data.service || "",
+      data.rating || "",
+      data.feedback || "",
+      data.contact || ""
+    ];
+    
+    // Menambahkan data ke baris paling bawah
+    sheet.appendRow(rowData);
+    
+    // Mengembalikan response sukses
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "success",
+      message: "Data berhasil disimpan"
+    })).setMimeType(ContentService.MimeType.JSON);
+    
+  } catch (error) {
+    // Mengembalikan response error jika gagal
+    return ContentService.createTextOutput(JSON.stringify({
+      status: "error",
+      message: error.toString()
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// Fungsi doGet ditambahkan agar URL bisa ditest di browser (opsional)
+function doGet(e) {
+  return ContentService.createTextOutput("Review Gate Webhook is active.");
+}

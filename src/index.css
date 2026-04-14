@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #0056b3; /* Makassar Blue - A deep, professional blue */
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-secondary: #f0f7ff; /* Very Light Blue */
+  --color-secondary-foreground: #003366;
+  
+  --color-background: #FFFFFF;
+  --color-foreground: #1a1a1a;
+  
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1a1a1a;
+  
+  --color-muted: #f8fafc;
+  --color-muted-foreground: #64748b;
+  
+  --color-accent: #e0f2fe;
+  --color-accent-foreground: #0056b3;
+  
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-sm;
+  }
+  
+  .glass-dark {
+    @apply bg-slate-900/70 backdrop-blur-lg border border-slate-800/50 shadow-sm;
+  }
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased;
+}
