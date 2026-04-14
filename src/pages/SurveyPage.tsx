@@ -4,9 +4,9 @@ import { CheckCircle2, ArrowRight, Loader2, ChevronDown, ArrowLeft } from 'lucid
 import { useNavigate } from 'react-router-dom';
 
 const services = [
-  'Pelayanan Administrasi Kependudukan (Adminduk)',
-  'Pelayanan Non-Perizinan (Surat Keterangan & Rekomendasi)',
-  'Pelayanan Kesejahteraan Sosial & Pemberdayaan',
+  'Layanan Administrasi Kependudukan (Adminduk)',
+  'Layanan Non-Perizinan (Surat Keterangan & Rekomendasi)',
+  'Layanan Kesejahteraan Sosial & Pemberdayaan',
   'Lainnya'
 ];
 
