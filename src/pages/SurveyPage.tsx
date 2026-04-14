@@ -4,10 +4,9 @@ import { CheckCircle2, ArrowRight, Loader2, ChevronDown, ArrowLeft } from 'lucid
 import { useNavigate } from 'react-router-dom';
 
 const services = [
-  'Layanan KK/KTP',
-  'Layanan Perizinan',
-  'Layanan Kesehatan',
-  'Keamanan & Ketertiban',
+  'Pelayanan Administrasi Kependudukan (Adminduk)',
+  'Pelayanan Non-Perizinan (Surat Keterangan & Rekomendasi)',
+  'Pelayanan Kesejahteraan Sosial & Pemberdayaan',
   'Lainnya'
 ];
 
@@ -41,6 +40,7 @@ export default function SurveyPage({ onClose }: SurveyPageProps = {}) {
     tanggal: new Date().toISOString().split('T')[0],
     waktu: `${String(new Date().getHours()).padStart(2, '0')}:${String(new Date().getMinutes()).padStart(2, '0')}`,
     layanan: '',
+    layananLainnya: '',
     jenisKelamin: '',
     usia: '',
     pendidikan: '',
@@ -86,7 +86,7 @@ export default function SurveyPage({ onClose }: SurveyPageProps = {}) {
         nama: formData.nama,
         tanggal: formData.tanggal,
         waktu: formData.waktu,
-        layanan: formData.layanan,
+        layanan: formData.layanan === 'Lainnya' ? `Lainnya : ${formData.layananLainnya}` : formData.layanan,
         jenisKelamin: formData.jenisKelamin,
         usia: formData.usia,
         pendidikan: formData.pendidikan,
@@ -124,10 +124,10 @@ export default function SurveyPage({ onClose }: SurveyPageProps = {}) {
   };
 
   const isStep1Valid = 
-    formData.nama.trim() !== '' && 
     formData.tanggal !== '' && 
     formData.waktu !== '' && 
     formData.layanan !== '' && 
+    (formData.layanan !== 'Lainnya' || formData.layananLainnya.trim() !== '') &&
     formData.jenisKelamin !== '' && 
     formData.usia !== '' && 
     formData.pendidikan !== '' && 
@@ -189,7 +189,7 @@ export default function SurveyPage({ onClose }: SurveyPageProps = {}) {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {/* Nama */}
                   <div className="space-y-1.5 md:col-span-2">
-                    <label className="block text-xs font-bold text-slate-700">Nama Lengkap <span className="text-red-500">*</span></label>
+                    <label className="block text-xs font-bold text-slate-700">Nama Lengkap <span className="text-slate-400 font-normal">(Opsional)</span></label>
                     <input
                       type="text"
                       value={formData.nama}
@@ -235,6 +235,15 @@ export default function SurveyPage({ onClose }: SurveyPageProps = {}) {
                       </select>
                       <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
                     </div>
+                    {formData.layanan === 'Lainnya' && (
+                      <input
+                        type="text"
+                        value={formData.layananLainnya}
+                        onChange={(e) => updateData('layananLainnya', e.target.value)}
+                        placeholder="Tuliskan jenis layanan lainnya..."
+                        className="w-full mt-2 p-3 text-sm rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-[#0056b3] focus:ring-2 focus:ring-[#0056b3]/20 outline-none transition-all font-medium text-slate-700"
+                      />
+                    )}
                   </div>
 
                   {/* Jenis Kelamin */}
