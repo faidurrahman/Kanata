@@ -4,7 +4,7 @@ import {
   PieChart, Pie, Cell, Legend, LabelList
 } from 'recharts';
 import { 
-  Users, Star, ArrowLeft, LayoutDashboard, Calendar, Info, MessageSquare, TrendingDown, FileText, Loader2
+  Users, Star, ArrowLeft, LayoutDashboard, Calendar, Info, MessageSquare, TrendingDown, FileText, Loader2, LogOut
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
@@ -68,6 +68,11 @@ export default function AdminDashboard() {
     };
     fetchData();
   }, []);
+
+  const handleLogout = () => {
+    sessionStorage.removeItem('isAuthenticated');
+    navigate('/login');
+  };
 
   const { 
     totalResponden, 
@@ -278,6 +283,13 @@ export default function AdminDashboard() {
               className="px-4 py-2 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 transition-colors rounded-full text-sm font-bold flex items-center gap-2"
             >
               <LayoutDashboard className="w-4 h-4" /> Executive View
+            </button>
+            <button 
+              onClick={handleLogout}
+              className="p-2 bg-red-50 text-red-600 hover:bg-red-100 transition-colors rounded-full"
+              title="Logout"
+            >
+              <LogOut className="w-5 h-5" />
             </button>
           </div>
         </div>
