@@ -31,9 +31,9 @@ export default function LandingPage() {
       <nav className="fixed top-0 w-full z-50 glass px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo KANATA" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
-          <div className="flex flex-col">
-            <span className="font-bold text-lg tracking-tight leading-none">KANATA'</span>
-            <span className="text-[10px] text-slate-500 font-medium uppercase tracking-widest">Kecamatan Ujung Pandang</span>
+          <div className="flex flex-col justify-center">
+            <span className="font-bold text-lg tracking-tight leading-none">Kecamatan</span>
+            <span className="font-bold text-lg tracking-tight leading-none">Ujung Pandang</span>
           </div>
         </div>
         <div className="flex gap-3">
@@ -55,19 +55,19 @@ export default function LandingPage() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-center justify-center space-y-8"
+          className="flex flex-col items-center justify-center space-y-6"
         >
-          <motion.h1 variants={item} className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
-            Selamat Datang di <br/>
-            <span className="text-[#0056b3]">KANATA'</span>
+          <motion.div variants={item} className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[#0056b3] text-sm font-bold tracking-widest uppercase shadow-sm">
+            Aplikasi
+          </motion.div>
+          <motion.h1 variants={item} className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.25] md:leading-[1.15]">
+            Survei Kepuasan Masyarakat <br />
+            <span className="text-[#0056b3] text-2xl md:text-4xl lg:text-5xl mt-2 inline-block">Kecamatan Ujung Pandang</span>
           </motion.h1>
-          <motion.p variants={item} className="text-base text-slate-500 max-w-lg leading-relaxed mx-auto font-medium">
-            Kotak Aspirasi dan PeNilaian MasyarAkat Transparan & Akuntabel
+          <motion.p variants={item} className="text-base md:text-lg text-slate-500 max-w-2xl leading-relaxed mx-auto px-4">
+            Suara Anda adalah kunci kemajuan pelayanan publik kita. Berikan penilaian dan masukan Anda untuk Kecamatan Ujung Pandang yang lebih baik.
           </motion.p>
-          <motion.p variants={item} className="text-sm text-slate-500 max-w-lg leading-relaxed mx-auto mt-2">
-            Suara Anda adalah kunci kemajuan Kecamatan kita. Berikan penilaian untuk pelayanan di Kecamatan Ujung Pandang melalui kuesioner ini.
-          </motion.p>
-          <motion.div variants={item} className="pt-4 flex flex-wrap justify-center gap-4">
+          <motion.div variants={item} className="pt-6 flex flex-wrap justify-center gap-4">
             <Button size="lg" onClick={() => setShowSurveyModal(true)} className="h-14 px-8 text-base rounded-full bg-[#0056b3] hover:bg-[#004494] shadow-2xl shadow-blue-900/30 transition-all hover:scale-105">
               Beri Nilai Sekarang <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
@@ -78,9 +78,12 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-slate-100">
           <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-4 text-center">
-              <div className="flex items-center justify-center gap-2">
-                <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo KANATA" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
-                <span className="font-bold">KANATA'</span>
+              <div className="flex items-center justify-center gap-3">
+                <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo Kecamatan Ujung Pandang" className="w-10 h-10 object-contain" referrerPolicy="no-referrer" />
+                <div className="flex flex-col text-left">
+                  <span className="font-bold text-lg leading-none">Kecamatan</span>
+                  <span className="font-bold text-lg leading-none">Ujung Pandang</span>
+                </div>
               </div>
               <p className="text-sm text-slate-400 font-medium">© 2026 Pemerintah Kecamatan Ujung Pandang. Makassar, Indonesia.</p>
           </div>

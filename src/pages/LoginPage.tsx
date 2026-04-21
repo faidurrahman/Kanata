@@ -32,7 +32,7 @@ export default function LoginPage() {
             <Lock className="w-8 h-8 text-blue-600" />
           </div>
           <h2 className="text-2xl font-bold text-white">Login Admin</h2>
-          <p className="text-blue-100 text-sm mt-1">Dasbor IKM KANATA'</p>
+          <p className="text-blue-100 text-sm mt-1">Dasbor IKM Kecamatan Ujung Pandang</p>
         </div>
         
         <div className="p-8">

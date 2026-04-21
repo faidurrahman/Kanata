@@ -148,11 +148,10 @@ export default function SurveyPage({ onClose }: SurveyPageProps = {}) {
               <ArrowLeft className="w-6 h-6" />
             </button>
           )}
-          <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo KANATA" className="w-16 h-16 object-contain mx-auto mb-3 bg-white rounded-xl p-1" referrerPolicy="no-referrer" />
-          <h1 className="text-lg md:text-xl font-black text-white mb-1.5 leading-tight">
-            KUESIONER KANATA'<br/>
-            <span className="text-sm md:text-base font-medium text-blue-100 block mt-1">Kotak Aspirasi dan PeNilaian MasyarAkat Transparan & Akuntabel</span>
-            <span className="text-sm md:text-base font-bold text-blue-100 block mt-1">KECAMATAN UJUNG PANDANG KOTA MAKASSAR</span>
+          <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo Kecamatan Ujung Pandang" className="w-16 h-16 object-contain mx-auto mb-3 bg-white rounded-xl p-1" referrerPolicy="no-referrer" />
+          <h1 className="text-lg md:text-xl font-black text-white mb-1.5 leading-tight uppercase tracking-wide">
+            KUESIONER KEPUASAN MASYARAKAT<br/>
+            <span className="text-sm md:text-base font-bold text-blue-100 block mt-2">KECAMATAN UJUNG PANDANG KOTA MAKASSAR</span>
           </h1>
         </div>
 

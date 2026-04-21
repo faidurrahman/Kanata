@@ -242,9 +242,9 @@ export default function AdminDashboard() {
               <ArrowLeft className="w-5 h-5" />
             </button>
             <div className="flex items-center gap-3">
-              <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo KANATA" className="w-10 h-10 object-contain hidden sm:block" referrerPolicy="no-referrer" />
+              <img src="https://drive.google.com/thumbnail?id=1BU0DPMBjVe379MQ7Rczjn3_s4DAEa5L9&sz=w500" alt="Logo Kecamatan Ujung Pandang" className="w-10 h-10 object-contain hidden sm:block" referrerPolicy="no-referrer" />
               <div>
-                <h1 className="text-xl md:text-2xl font-bold text-slate-800 leading-tight">Dashboard KANATA'</h1>
+                <h1 className="text-xl md:text-2xl font-bold text-slate-800 leading-tight">Dashboard Admin</h1>
                 <p className="text-sm text-slate-500 font-medium">Kecamatan Ujung Pandang, Kota Makassar</p>
               </div>
             </div>
